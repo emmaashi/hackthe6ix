@@ -32,6 +32,11 @@ nav .menu {
   transition: transform 0.5s;
 }
 
+.transparent-button {
+  background-color: none;
+  border: white; /* Remove border if needed */
+  text-decoration: none; /* Remove underline from link */
+}
 .navbar-custom .navbar-brand.logo-image img {
   width: 7.0625rem;
   height: 1rem;
@@ -42,6 +47,15 @@ nav .menu {
   color: #fff;
   text-decoration: none;
   transition: all 0.2s ease;
+}
+
+nav {
+  position: fixed;
+  background: #1b1b1b;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 12;
+  margin-bottom: 20px; /* Add this line for margin */
 }
 
 .menu ul {
@@ -69,6 +83,14 @@ nav .menu {
 }
 .img {
   background: url(images/wildfires.avif) no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.background {
+  background: url(images/donate.jpeg) no-repeat;
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -197,8 +219,6 @@ html {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 .wrapper .form-box {
@@ -294,7 +314,7 @@ html {
   color: #162938;
   text-align: center;
   font-weight: 500;
-  margin: 25px 0 10px;
+  margin: 10px 0 0px;
 }
 
 .login-register p a {
