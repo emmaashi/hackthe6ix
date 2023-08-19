@@ -25,6 +25,12 @@
           <li><a href="donate.html">Donate</a></li>
         </ul>
       </div>
+      <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+          var header = document.querySelector("header");
+          header.classList.toggle("sticky", window.scrollY > 0);
+        });
+      </script>
     </nav>
 
     <div class="section1">
@@ -44,6 +50,26 @@
         </p>
 
         <h1><br /><u>Inspiration</u></h1>
+        <p>
+          <br />
+          Our inspiration stemmed from the devastating wildfires that have been
+          striking several regions of Canada and most notably, Maui in the
+          Hawaii. Fueled by a fervent desire to cultivate a cutting-edge
+          environmental solution, our journey began with the intention of
+          crafting an exceptional environmental hack that not only addresses the
+          current crisis but also paves the way for a more resilient future.
+        </p>
+
+        <h1><br /><u> Our Solution</u></h1>
+        <p>
+          FIREcast integrates geo-coding and weather data APIs to predict
+          regions with elevated wildfire risks. Recognizing the inherent
+          challenges in fully averting these natural and human-induced
+          disasters, our tool enables global users to participate in resource
+          allocation for vulnerable areas, while aiding experts in identifying
+          high-risk zones.
+        </p>
+        <button>Prediction AI</button>
       </div>
     </div>
   </body>
