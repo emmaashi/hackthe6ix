@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FIREcast</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <script src="script.js"></script>
   </head>
   <link rel="icon" href="images/logo.png">
   <body>
@@ -26,14 +26,35 @@
     </nav>
 </nav>
 
-<div>
-    <h1> Hello </h1>
-</div>
+<form>
+  <label for="increment">Increment:</label><br>
+  <input type="number" id="increment" name="increment" value="1"><br>
+</form>
 
-<div class="autocomplete">
-  <label class="form-label">City :</label>
-  <input type="text" placeholder="Start typing..." class="form-control" id="myInput">
-</div>
+<div class = "input-box">
+  <span class = "icon"><ion-icon name="pin"></ion-icon></span>
+  <label for="city">'</label>
+  <input type="city" id="city" name="city" value="City"></div>
+
+
+  <div class = "input-box">
+    <span class = "icon"><ion-icon name="locate"></ion-icon></span>
+    <label for="province">Province/State:</label>
+    <input type="province" id="province" name="province"/></div>
+
+
+    <div class = "input-box">
+      <span class = "icon"><ion-icon name="navigate-circle"></ion-icon></span>
+      <label for="country">Country:</label>
+      <input type="country" id="country" name="country"/>
+  </div>
+
+  <button onclick="onSubmit()" type ="submit" class = "btn">Submit</button>
+    
+  
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
   </body>
 </html>
+
