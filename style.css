@@ -30,6 +30,12 @@ nav .menu {
   font-size: 35px;
   font-weight: 600;
 }
+
+.navbar-custom .navbar-brand.logo-image img {
+  width: 7.0625rem;
+  height: 2rem;
+  -webkit-backface-visibility: hidden;
+}
 .menu ul {
   display: inline-flex;
 }
@@ -119,7 +125,7 @@ nav .menu {
 
 .auto-type {
   color: #fff;
-  font-size: 90px;
+  font-size: 86px;
   font-weight: 300;
 }
 
