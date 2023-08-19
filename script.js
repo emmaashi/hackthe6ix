@@ -31,13 +31,11 @@ async function getWeather(weatherUrl){
 
     weather = weatherData.weather[0].id;
     date = weatherData.dt;
-    temp = weatherData.main.temp;
-    wind = weatherData.wind[]
-    //rain =
-    //humidity = 
-
-    console.log(temp);
-    
+    tempKelvin = weatherData.main.temp; 
+    humidity = weatherData.main.humidity;
+    wind = weatherData.wind.speed;
+ //   rain = weatherData.
+    convertToMetric(tempKelvin);
 }
 
 function onSubmit() {
@@ -50,10 +48,11 @@ function onSubmit() {
     let lon=0;
      //weather
     let date=0 //date (exact)
-    let temp =0 //temperature
+    let tempKelvin =0 //temperature
     let wind = 0 //windspeed
     let rain =0 //rain
     let humidity = 0; //humidity
+    let tempCelsius = 0; //
 
     const apiKey="aa411e4a1fd7d03c40d25e75fc3d7e06"
 
@@ -62,6 +61,21 @@ function onSubmit() {
     
     getCoordinates(coordinateUrl);
     getWeather(weatherUrl);
+    new fireWeatherIndex(weather, date, tempCelsius, wind, humidity);
 }
 
 const port = 5000
+
+function convertToMetric(tempKelvin){
+    tempCelsius = tempKelvin - 273.15;
+}
+
+class fireWeatherIndex {
+    constructor(weather, date, tempCelsius, wind, humidity){
+        this.weather=weather;
+        this.date=date;
+        this.tempCelsius=tempCelsius
+        this.wind=wind;
+        this.humidity=humidity;
+    }
+}
