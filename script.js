@@ -1,3 +1,4 @@
+let weather=0
 
 function checkScroll() {
     var startY = $(".navbar").height() * 2; //The point where the navbar changes in px
@@ -47,7 +48,7 @@ function onSubmit() {
     const limit=5;
     let lat=0;
     let lon=0;
-    let weather=0 //weather
+     //weather
     let date=0 //date (exact)
     let temp =0 //temperature
     let wind = 0 //windspeed
