@@ -94,7 +94,22 @@ async function onSubmit() {
 
   // Calculate FWI
   var fwi = calculateFWI(isi, bui);
-  console.log(fwi);
+
+  const temperatureElement = document.getElementById('temperature');
+  const windElement = document.getElementById('wind');
+  const humidityElement = document.getElementById('humidity');
+  const weatheridElement = document.getElementById('weatherID');
+  const fwiElement = document.getElementById('fwi');
+
+  temperatureElement.textContent = tempCelsius.toFixed(2);
+  windElement.textContent = wind;
+  humidityElement.textContent = humidity;
+  weatheridElement.textContent = weatherid;
+  fwiElement.textContent=fwi.toFixed(2);
+  
+  <div>
+<img src = "https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lon}&zoom=16&size=250x150&key=AIzaSyA-RiRzMny8gfPyV8yJq6AiD00zSEByCQs"></img>
+  </div>
 
   getWeatherFromId(weatherid);
   // return weatherid = weatherDatas[3];
