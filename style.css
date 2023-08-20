@@ -5,6 +5,13 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow: scroll;
+}
+
 ::selection {
   color: #000;
   background: #fff;
@@ -83,6 +90,15 @@ nav {
 }
 .img {
   background: url(images/wildfires.avif) no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.prediction {
+  background: url(images/prediction.jpeg) no-repeat;
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -168,12 +184,6 @@ nav {
   margin-top: 50px;
 }
 
-html {
-  scroll-behavior: smooth;
-  height: 100%;
-  overflow: hidden;
-}
-
 #about {
   background: #fff;
 }
@@ -183,24 +193,53 @@ html {
   clear: both;
 }
 
-#note {
-  max-width: 105%;
-  max-height: 105%;
-}
-
 .section1 {
   padding-top: 20vh;
   width: 100vw;
-  height: 900px;
+  height: 43vh;
   display: flex;
-  justify-content: space-between;
-  overflow-y: auto;
-  max-height: calc(100vh - 60px);
+  flex-direction: column;
 }
 
 .text1 {
-  max-width: 50vw;
+  display: flex;
+}
+
+.textbox1 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8vw;
   margin-right: 8vw;
+}
+
+.img1 {
+  width: 45%;
+  height: 100%;
+  margin-left: 8vw;
+  border-radius: 4%;
+}
+
+.text2 {
+  display: flex;
+}
+
+.textbox2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8vw;
+  margin-right: 10vw;
+}
+
+.final {
+  display: flex;
+  justify-content: center;
+}
+
+.img2 {
+  height: 70%;
+  width: 70%;
+  margin-right: 8vh;
+  margin-top: 12vh;
 }
 
 /*DONATION PAGE*/
@@ -212,13 +251,14 @@ html {
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(80px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  height: 67vh;
 }
 
 .wrapper .form-box {
@@ -325,4 +365,112 @@ html {
 
 .login-register p a:hover {
   text-decoration: underline;
+}
+
+/*DONATION BOX*/
+.donation-wrapper {
+  display: none;
+  width: 400px;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border-color: white;
+  border: 2px solid white;
+  padding: 20px 25px 40px;
+  margin: 0 auto; /* Center horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center vertically */
+}
+
+.price-input {
+  width: 85%;
+  display: flex;
+  margin: 30px 0 35px;
+}
+
+.price-input .field {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.field input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  text-align: center;
+  margin-left: 12px;
+  border-radius: 5px;
+  border: 1px solid #999;
+  /* -moz-appearance: none; */
+}
+input[type="number"]::-webkit-outer-spin-button
+  input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.slider {
+  height: 5px;
+  border-radius: 5px;
+  background: #ddd;
+  position: relative;
+}
+
+.slider .progress {
+  height: 5px;
+  left: 25%;
+  right: 25%;
+  position: absolute;
+  border-radius: 5px;
+  padding-right: 50px;
+  background: #162938;
+}
+
+.range-input {
+  position: relative;
+  background: #162938;
+}
+
+.range-input input {
+  position: absolute;
+  top: -5px;
+  height: 5px;
+  width: 100%;
+}
+
+.wrapper-container {
+  display: flex;
+  justify-content: space-around; /* Adjust the spacing between wrappers */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-top: 8rem; /* Adjust as needed */
+}
+.wrapper-1 {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  margin: 3rem;
+  margin-top: 9rem;
+  padding: 2rem;
+  width: 130%;
+  height: 67vh;
+  width: 55vh;
+}
+
+nav {
+  top: 0;
+}
+
+#container {
+  margin: 0 auto;
+  grid-template-columns: 300px 300px 300px;
+}
+
+.col1,
+.col2,
+.col3 {
+  float: left;
 }
