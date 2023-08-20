@@ -1,6 +1,6 @@
-import getWeatherFromId from "./prediction.js";
+//import getWeatherFromId from "./prediction.js";
 
-let weatherid=801
+//let weatherid=801
 
 function checkScroll() {
     var startY = $(".navbar").height() * 2; //The point where the navbar changes in px
@@ -33,11 +33,11 @@ async function getWeather(weatherUrl){
     const weatherResponse = await fetch(weatherUrl);
     var weatherData = await weatherResponse.json();
     
-    weatherid = weatherData.weather[0].id;
-    date = weatherData.dt;
-    tempKelvin = weatherData.main.temp; 
-    humidity = weatherData.main.humidity;
-    wind = weatherData.wind.speed;
+    var weatherid = weatherData.weather[0].id;
+    var date = weatherData.dt;
+    var tempKelvin = weatherData.main.temp; 
+    var humidity = weatherData.main.humidity;
+    var wind = weatherData.wind.speed;
  
     tempCelsius= convertToMetric(tempKelvin);
 
@@ -52,13 +52,13 @@ async function onSubmit() {
 
     
     const limit=5;
-    var date=0 //date (exact)
-    var tempKelvin =0 //temperature
-    var wind = 0 //windspeed
-    var rain =0 //rain
-    var humidity = 0; //humidity
-    var tempCelsius = 0; 
-    var fwi=0;
+   // var date=0 //date (exact)
+    //var tempKelvin =0 //temperature
+    //var wind = 0 //windspeed
+    //var rain =0 //rain
+    //var humidity = 0; //humidity
+    //var tempCelsius = 0; 
+    //var fwi=0;
 
     const apiKey="aa411e4a1fd7d03c40d25e75fc3d7e06"
 
@@ -80,15 +80,15 @@ async function onSubmit() {
     var weatherid = weatherDatas[3];
     
  // Calculate FFMC, DMC, DC, ISI, BUI
-    const ffmc = calculateFFMC(weather, wind);
+    const ffmc = calculateFFMC(weatherid, wind);
     const dmc = calculateDMC(humidity);
     const dc = calculateDC(tempCelsius);
-    const isi = calculateISI(wind, weather);
+    const isi = calculateISI(wind, weatherid);
     const bui = calculateBUI(humidity, tempCelsius);
     
     // Calculate FWI
-    fwi = calculateFWI(isi, bui);
-
+    var fwi = calculateFWI(isi, bui);
+    console.log(fwi);
 }
 console.log(getWeatherFromId(weatherid))
 
