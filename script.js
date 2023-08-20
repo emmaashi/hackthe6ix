@@ -1,4 +1,3 @@
-let weather=0
 
 function checkScroll() {
     var startY = $(".navbar").height() * 2; //The point where the navbar changes in px
@@ -19,25 +18,32 @@ function checkScroll() {
 async function getCoordinates(coordinateUrl) {
     const locationResponse = await fetch(coordinateUrl);
     var locationData = await locationResponse.json();
-
+    
     lat = locationData[0].lat;
     lon = locationData[0].lon;
+
+    const locData = [lat, lon];
+    return locData;
 }
 
 async function getWeather(weatherUrl){
     const weatherResponse = await fetch(weatherUrl);
     var weatherData = await weatherResponse.json();
     
-    weather = weatherData.weather[0].id;
+    console.log(weatherData);
+
+    weatherid = weatherData.weather[0].id;
+
+    console.log(weatherid);
     date = weatherData.dt;
     tempKelvin = weatherData.main.temp; 
     humidity = weatherData.main.humidity;
     wind = weatherData.wind.speed;
-
-    //console.log(wind);
  
     tempCelsius= convertToMetric(tempKelvin);
-    //console.log(weather);
+
+    const weathData = [tempCelsius, wind, humidity, weatherid];
+    return weathData;
 }
 
 async function onSubmit() {
@@ -45,32 +51,53 @@ async function onSubmit() {
     var province = document.getElementById("province").value;
     var country = document.getElementById("country").value;
 
+    
     const limit=5;
-    var lat=0;
-    var lon=0;
     var date=0 //date (exact)
     var tempKelvin =0 //temperature
     var wind = 0 //windspeed
     var rain =0 //rain
     var humidity = 0; //humidity
-    var tempCelsius = 0; //
+    var tempCelsius = 0; 
     var fwi=0;
 
     const apiKey="aa411e4a1fd7d03c40d25e75fc3d7e06"
 
     const coordinateUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${province},${country}&limit=${limit}&appid=${apiKey}`;
+   
+
+    var locationDatas= await getCoordinates(coordinateUrl);
+
+    var lat = locationDatas[0];
+    var lon = locationDatas[1];
+
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-    getCoordinates(coordinateUrl);
-    getWeather(weatherUrl);
+    var weatherDatas = await getWeather(weatherUrl);
+
+    var tempCelsius = weatherDatas[0];
+    var wind = weatherDatas[1];
+    var humidity = weatherDatas[2];
+    var weatherid = weatherDatas[3];
+    
+ // Calculate FFMC, DMC, DC, ISI, BUI
+    const ffmc = calculateFFMC(weather, wind);
+    const dmc = calculateDMC(humidity);
+    const dc = calculateDC(tempCelsius);
+    const isi = calculateISI(wind, weather);
+    const bui = calculateBUI(humidity, tempCelsius);
+    
+    // Calculate FWI
+    fwi = calculateFWI(isi, bui);
+
 }
 
 function convertToMetric(tempKelvin){
     return tempKelvin - 273.15;
 }
 
-function calculateFFMC(weather, wind) {
-        return (91.9 * Math.exp(0.1386 * weather)) * (1 - Math.exp(-0.000265 * wind));
+function calculateFFMC(weatherid, wind) {
+        return (91.9 * Math.exp(0.1386 * weatherid)) * (1 - Math.exp(-0.000265 * wind));
 }
       
 function calculateDMC(humidity) {
@@ -81,8 +108,8 @@ function calculateDC(tempCelsius) {
         return 7.9 * (Math.exp(0.00412 * tempCelsius)) - 1;
 }
       
-function calculateISI(wind, weather) {
-        return 0.208 * wind * (100 - weather);
+function calculateISI(wind, weatherid) {
+        return 0.208 * wind * (100 - weatherid);
 }
       
 function calculateBUI(humidity, tempCelsius) {
