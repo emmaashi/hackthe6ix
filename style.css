@@ -484,3 +484,30 @@ nav {
 .btn button:hover {
   background-color: #123c56;
 }
+
+.buttonheader {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.back {
+  background-color: #123c56;
+  font-weight: 200px;
+  max-width: 10vw;
+  height: 40px;
+  border-radius: 6px;
+  padding: 8px;
+  margin-left: 44vw;
+  margin-top: 5vh;
+}
+
+#empty-section {
+  padding: 40px; /* Adjust padding as needed */
+  text-align: center; /* Center the content if you add any */
+  font-size: 18px; /* Set font size for the content */
+  color: #333; /* Set text color */
+  border-top: 1px solid #ddd; /* Add a top border for separation */
+}
