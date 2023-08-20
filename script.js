@@ -54,6 +54,7 @@ async function getWeather(weatherUrl) {
 }
 
 async function onSubmit() {
+  console.log("Hello");
   var city = document.getElementById("city").value;
   var province = document.getElementById("province").value;
   var country = document.getElementById("country").value;
@@ -95,21 +96,17 @@ async function onSubmit() {
   // Calculate FWI
   var fwi = calculateFWI(isi, bui);
 
-  const temperatureElement = document.getElementById('temperature');
-  const windElement = document.getElementById('wind');
-  const humidityElement = document.getElementById('humidity');
-  const weatheridElement = document.getElementById('weatherID');
-  const fwiElement = document.getElementById('fwi');
+  const temperatureElement = document.getElementById("temperature");
+  const windElement = document.getElementById("wind");
+  const humidityElement = document.getElementById("humidity");
+  const weatheridElement = document.getElementById("weatherID");
+  const fwiElement = document.getElementById("fwi");
 
   temperatureElement.textContent = tempCelsius.toFixed(2);
   windElement.textContent = wind;
   humidityElement.textContent = humidity;
   weatheridElement.textContent = weatherid;
-  fwiElement.textContent=fwi.toFixed(2);
-  
-  <div>
-<img src = "https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lon}&zoom=16&size=250x150&key=AIzaSyA-RiRzMny8gfPyV8yJq6AiD00zSEByCQs"></img>
-  </div>
+  fwiElement.textContent = fwi.toFixed(2);
 
   getWeatherFromId(weatherid);
   // return weatherid = weatherDatas[3];
@@ -146,6 +143,7 @@ function calculateFWI(isi, bui) {
 
 function getWeatherFromId(weatherid) {
   const numberlist = weatherid.toString().split("");
+  var weatherid = weatherid.toString();
   console.log(numberlist);
   if (numberlist[0] === "2") {
     var weather = "Thunderstorm";
@@ -185,6 +183,9 @@ function getWeatherFromId(weatherid) {
     }
   }
   console.log(weather);
+  //console.log(weather);
+  const predictionELement = document.getElementById("predictions");
+  predictionELement.textContent = weather;
 }
 
 //getWeatherFromId(weatherid);

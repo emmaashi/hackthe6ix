@@ -113,6 +113,7 @@ nav {
   background-position: center;
   position: relative;
 }
+
 .img::before {
   content: "";
   position: absolute;
@@ -433,9 +434,21 @@ input[type="number"]::-webkit-outer-spin-button
   margin: 3rem;
   margin-top: 9rem;
   padding: 2rem;
-  width: 130%;
+  width: 100%;
   height: 67vh;
   width: 55vh;
+}
+
+.wrapper-2 h1 {
+  font-size: 2em;
+  color: #162938;
+  margin-bottom: 20px;
+}
+
+.wrapper-2 p {
+  font-size: 1em;
+  color: #162938;
+  margin-bottom: 20px;
 }
 
 nav {
@@ -504,10 +517,14 @@ nav {
   margin-top: 5vh;
 }
 
-#empty-section {
-  padding: 40px; /* Adjust padding as needed */
-  text-align: center; /* Center the content if you add any */
-  font-size: 18px; /* Set font size for the content */
-  color: #333; /* Set text color */
-  border-top: 1px solid #ddd; /* Add a top border for separation */
+h5 {
+  color: #123c56;
+  margin-top: 50px;
+  font-size: 70px;
+  transform: translateY(10%);
+}
+
+p5 {
+  font-size: 23px;
+  transform: translateY(90%);
 }
