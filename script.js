@@ -34,12 +34,10 @@ async function getWeather(weatherUrl){
     humidity = weatherData.main.humidity;
     wind = weatherData.wind.speed;
 
-    console.log(wind);
+    //console.log(wind);
  
     tempCelsius= convertToMetric(tempKelvin);
-
- 
-    console.log(weather);
+    //console.log(weather);
 }
 
 async function onSubmit() {
@@ -63,9 +61,8 @@ async function onSubmit() {
     const coordinateUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${province},${country}&limit=${limit}&appid=${apiKey}`;
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-    await getCoordinates(coordinateUrl);
-    await getWeather(weatherUrl);
-    
+    getCoordinates(coordinateUrl);
+    getWeather(weatherUrl);
 }
 
 function convertToMetric(tempKelvin){
