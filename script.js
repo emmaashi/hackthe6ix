@@ -1,3 +1,6 @@
+import getWeatherFromId from "./prediction.js";
+
+let weatherid=801
 
 function checkScroll() {
     var startY = $(".navbar").height() * 2; //The point where the navbar changes in px
@@ -30,11 +33,7 @@ async function getWeather(weatherUrl){
     const weatherResponse = await fetch(weatherUrl);
     var weatherData = await weatherResponse.json();
     
-    console.log(weatherData);
-
     weatherid = weatherData.weather[0].id;
-
-    console.log(weatherid);
     date = weatherData.dt;
     tempKelvin = weatherData.main.temp; 
     humidity = weatherData.main.humidity;
@@ -91,6 +90,7 @@ async function onSubmit() {
     fwi = calculateFWI(isi, bui);
 
 }
+console.log(getWeatherFromId(weatherid))
 
 function convertToMetric(tempKelvin){
     return tempKelvin - 273.15;
@@ -119,6 +119,7 @@ function calculateBUI(humidity, tempCelsius) {
 function calculateFWI(isi, bui) {
         return (isi + bui) / 2;
 }
+
 
 
       
