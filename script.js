@@ -35,25 +35,14 @@ async function getWeather(weatherUrl){
     wind = weatherData.wind.speed;
 
     console.log(wind);
- //   rain = weatherData.
-// console.log(weather)
+ 
     tempCelsius= convertToMetric(tempKelvin);
 
-   // const ffmc = calculateFFMC(weather, wind);
-    //const dmc = calculateDMC(humidity);
-    //const dc = calculateDC(tempCelsius);
-    //const isi = calculateISI(wind, ffmc);
-    //const bui = calculateBUI(dmc, dc);
-    
+ 
     console.log(weather);
-    // Calculate FWI
-    //fwi = calculateFWI(isi, bui);
-
-    //console.log(fwi);
-   
 }
 
-function onSubmit() {
+async function onSubmit() {
     var city = document.getElementById("city").value;
     var province = document.getElementById("province").value;
     var country = document.getElementById("country").value;
@@ -74,14 +63,8 @@ function onSubmit() {
     const coordinateUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${province},${country}&limit=${limit}&appid=${apiKey}`;
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-    getCoordinates(coordinateUrl);
-    getWeather(weatherUrl);
-
-    // Calculate FFMC, DMC, DC, ISI, BUI
-
-   // console.log(weather);
-
-   // console.log(fwi);
+    await getCoordinates(coordinateUrl);
+    await getWeather(weatherUrl);
     
 }
 
