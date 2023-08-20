@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
   </head>
   <link rel="icon" href="images/logo.png">
   <body>
@@ -31,25 +32,25 @@
 <div class = "wrapper-1">
     <div class = "form-box login">
         <h1>Location</h1>
-        <form action = "#">
+        <form></form>
             <div class = "input-box">
                 <span class = "icon"><ion-icon name="pin"></ion-icon></span>
-                <input type="city" required>
+                <input type="city" required id="city" name="city" value="miami">
                 <label>City</label>
             </div>
             <div class = "input-box">
                 <span class = "icon"><ion-icon name="locate"></ion-icon></span>
-                <input type="province" required>
+                <input type="province" id="province" name="province">
                 <label>Province/State</label>
             </div>
             <div class = "input-box">
                 <span class = "icon"><ion-icon name="navigate-circle"></ion-icon></span>
-                <input type="country" required>
+                <input type="country" id="country" name="country">
                 <label>Country</label>
             </div>
             <div class="remember-forgot"></div>
                 <button onClick="onSubmit()" type = "submit" class = "btn">Submit</button>
-            </form> 
+             
     </div>
             </div>
     </div>
