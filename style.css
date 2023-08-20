@@ -528,3 +528,7 @@ p5 {
   font-size: 23px;
   transform: translateY(90%);
 }
+
+h6 {
+  background-color: red;
+}

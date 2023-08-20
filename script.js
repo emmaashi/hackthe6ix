@@ -108,7 +108,7 @@ async function onSubmit() {
   weatheridElement.textContent = weatherid;
   fwiElement.textContent = fwi.toFixed(2);
 
-  getWeatherFromId(weatherid);
+  getWeatherFromId(weatherid, fwi);
   // return weatherid = weatherDatas[3];
 }
 console.log(getWeatherFromId(weatherid));
@@ -141,7 +141,8 @@ function calculateFWI(isi, bui) {
   return (isi + bui) / 2;
 }
 
-function getWeatherFromId(weatherid) {
+function getWeatherFromId(weatherid, fwi) {
+  fwi1 = fwi;
   const numberlist = weatherid.toString().split("");
   var weatherid = weatherid.toString();
   console.log(numberlist);
@@ -179,13 +180,23 @@ function getWeatherFromId(weatherid) {
     if (weatherid === "800") {
       var weather = "clear";
     } else {
-      var weather = "cloudy";
+      var weather = "cloud";
     }
   }
   console.log(weather);
   //console.log(weather);
   const predictionELement = document.getElementById("predictions");
   predictionELement.textContent = weather;
+
+  const riskELement = document.getElementById("risk");
+  console.log(fwi);
+  if (fwi > 200) {
+    riskELement.textContent = "HIGH-RISK of Wildfire";
+  } else if (fwi < 100) {
+    riskELement.textContent = "LOW-RISK of Wildfire";
+  } else {
+    riskELement.textContent = "MODERATE-RISK of Wildfire";
+  }
 }
 
 //getWeatherFromId(weatherid);
