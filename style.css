@@ -184,6 +184,13 @@ nav {
   margin-top: 50px;
 }
 
+.h2 {
+  color: #000000;
+  margin-top: 50px;
+  font-size: 90px;
+  text-align: center;
+}
+
 #about {
   background: #fff;
 }
@@ -411,35 +418,6 @@ input[type="number"]::-webkit-outer-spin-button
   -webkit-appearance: none;
 }
 
-.slider {
-  height: 5px;
-  border-radius: 5px;
-  background: #ddd;
-  position: relative;
-}
-
-.slider .progress {
-  height: 5px;
-  left: 25%;
-  right: 25%;
-  position: absolute;
-  border-radius: 5px;
-  padding-right: 50px;
-  background: #162938;
-}
-
-.range-input {
-  position: relative;
-  background: #162938;
-}
-
-.range-input input {
-  position: absolute;
-  top: -5px;
-  height: 5px;
-  width: 100%;
-}
-
 .wrapper-container {
   display: flex;
   justify-content: space-around; /* Adjust the spacing between wrappers */
@@ -473,4 +451,36 @@ nav {
 .col2,
 .col3 {
   float: left;
+}
+
+.test {
+  width: 60vw;
+  height: 80vh;
+  background-color: green;
+  z-index: 14;
+}
+
+/* Add this CSS for styling the back button */
+.btn a {
+  text-decoration: none;
+}
+
+.btn button {
+  padding: 5px 10px; /* Adjust padding to fit the size of the word */
+  background: #162938;
+  border: none;
+  outline: none; /* Remove the default focus outline */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+  /* width: fit-content; Adjust the width to fit the content */
+  margin: 10px auto; /* Center the button horizontally */
+  display: block; /* Make the button a block element to center horizontally */
+  transition: background-color 0.3s ease;
+}
+
+.btn button:hover {
+  background-color: #123c56;
 }

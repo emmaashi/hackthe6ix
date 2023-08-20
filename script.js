@@ -5,7 +5,7 @@ var div = document.getElementById("main");
 
 // Function to show the donation wrapper and hide the form-box
 function hide() {
-  console.log("bruh");
+  console.log("hi");
   const wrapper = document.getElementById("wrapper");
   const donationWrapper = document.getElementById("donation-wrapper");
 
@@ -44,3 +44,11 @@ function onSubmit() {
   console.log(country);
   console.log(amount);
 }
+
+// Get a reference to the "Confirm" button
+const confirmButton = document.getElementById("confirmButton");
+
+// Add an event listener to handle navigation when the button is clicked
+confirmButton.addEventListener("click", function () {
+  window.location.href = "submission.html";
+});
