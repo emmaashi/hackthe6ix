@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FIREcast</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   </head>
@@ -25,14 +26,14 @@
       </div>
     </nav>
 </nav>
-<div class="background"></div>
+<div class="background" ></div>
     <div class="center">
       <div class="typing">
         <span class="auto-type"></span>
       
       </div>
       
-      <div class = "wrapper" id="wrapper">
+      <div data-aos="zoom-in-down" data-aos-duration="1000" class = "wrapper" id="wrapper">
         <div class = "form-box login">
             <h1>Donate</h1>
             <form action = "#">
@@ -76,5 +77,9 @@
   <script src = "script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
   </body>
 </html>

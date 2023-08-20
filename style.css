@@ -113,6 +113,16 @@ nav {
   background-position: center;
   position: relative;
 }
+
+.map {
+  background: url(images/maps.png) no-repeat;
+  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 .img::before {
   content: "";
   position: absolute;
@@ -438,6 +448,29 @@ input[type="number"]::-webkit-outer-spin-button
   width: 55vh;
 }
 
+/* Add this CSS to your existing style.css file */
+
+.wrapper-2 {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  width: 100%; /* Fill the whole width of the screen */
+  height: 100vh; /* Fill the whole height of the screen */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem; /* Adjust margin as needed */
+}
+
+.wrapper-2 button {
+  width: auto; /* Adjust button width */
+  margin: 10px; /* Add space around the button */
+}
+
 nav {
   top: 0;
 }
@@ -451,13 +484,6 @@ nav {
 .col2,
 .col3 {
   float: left;
-}
-
-.test {
-  width: 60vw;
-  height: 80vh;
-  background-color: green;
-  z-index: 14;
 }
 
 /* Add this CSS for styling the back button */
@@ -508,6 +534,6 @@ nav {
   padding: 40px; /* Adjust padding as needed */
   text-align: center; /* Center the content if you add any */
   font-size: 18px; /* Set font size for the content */
-  color: #333; /* Set text color */
+  color: #162938; /* Set text color */
   border-top: 1px solid #ddd; /* Add a top border for separation */
 }
